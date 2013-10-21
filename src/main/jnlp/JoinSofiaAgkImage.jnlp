@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp
+  codebase="http://velobg.org/wp-content/uploads/2013/10"
+>
+  <information>
+    <title>Сваляне на чертежи от сайта на sofia-agk.com</title>
+    <vendor>Велоеволюция</vendor>
+    <homepage href="http://velobg.org"/>
+    <description>Програмата за сваляне на чертежи-мозайка от сайта на sofia-agk.com и подреждането им в един цял чертеж</description>
+    <description kind="short">Сваляне на чертежи от сайта на sofia-agk.com</description>
+    <offline-allowed/>
+  </information>
+  <security>
+     <all-permissions/>
+  </security>
+  <resources>
+    <j2se version="1.5+" initial-heap-size="128m" max-heap-size="1000m" />
+    <jar href="JoinSofiaAgkImage.jar" main="true"/>
+  </resources>
+  <application-desc main-class="org.velobg.JoinSofiaAgkImage.Gui"/>
+</jnlp>
