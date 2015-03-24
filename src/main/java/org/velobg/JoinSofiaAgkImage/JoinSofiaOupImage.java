@@ -52,12 +52,13 @@ public class JoinSofiaOupImage {
 	
 	void downloadAll(String urlStr) throws Exception {
 		urlStr = urlStr.trim();
-		String urlPrefix = "http://sofia-agk.com/esoft/planove/displayImage.php?folder=";
-		if (!urlStr.startsWith(urlPrefix)) {
-			log("URL should start with '" + urlPrefix + "'");
+		String separator = "/displayImage.php?folder=";
+		if (!urlStr.contains(separator)) {
+			log("URL should contain '" + separator + "'");
 			return;
 		}
-		baseUrl = new URL("http://sofia-agk.com/esoft/planove/" + urlStr.substring(urlPrefix.length()));
+		outputFolder.mkdirs();
+		baseUrl = new URL(urlStr.replace(separator, "/"));
 		URL xmlUrl = new URL(baseUrl, "ImageProperties.xml");
 		
 		InputStream is = xmlUrl.openStream();
