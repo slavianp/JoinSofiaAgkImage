@@ -58,7 +58,10 @@ public class JoinSofiaOupImage {
 			return;
 		}
 		outputFolder.mkdirs();
-		baseUrl = new URL(urlStr.replace(separator, "/"));
+		urlStr = urlStr.replace(separator, "/");
+		if (!urlStr.endsWith("/"))
+			urlStr = urlStr + "/";
+		baseUrl = new URL(urlStr);
 		URL xmlUrl = new URL(baseUrl, "ImageProperties.xml");
 		
 		InputStream is = xmlUrl.openStream();
